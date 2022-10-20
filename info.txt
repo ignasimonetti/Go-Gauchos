@@ -1,0 +1,14 @@
+
+
+
+<></> --> React Fragments
+
+rafce --> Atajo para crear plantilla de componente
+
+-> export default importo sin llaves (import Header from './components/Header');
+-> export nombrado con llaves (import {Header} from './components/Header');
+
+* Solo puedo tener 1 export default por archivo
+
+
+
