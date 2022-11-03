@@ -1,7 +1,7 @@
 
 import Cartwidget from "./Cartwidget";
-import Button from "../Button";
-import {AiOutlineShoppingCart} from "react-icons/ai";
+/* import Button from "../Button"; */
+import { Link , NavLink} from "react-router-dom";
 
 
 const Navbar = ({isInHeader}) => {
@@ -10,25 +10,29 @@ const Navbar = ({isInHeader}) => {
         return (
           <nav className="navbar">
             <ul>
-              <li>Sobre Nosotros</li>
-              <li>Servicios Disponibles</li>
-              <li>Registrate</li>
-              <li>Contacto</li>
+              <NavLink className="links" to="/nosotros">Sobre Nosotros</NavLink>
+              <NavLink className="links" to="/category">Servicios Disponibles</NavLink>
+              <NavLink className="links" to="/registro">Registrate</NavLink>
+              <NavLink className="links" to="contacto">Contacto</NavLink>
             </ul>
-            <div style={{display:'flex'}}> 
-              <Button style={{marginRight:'10px'}} text="Login" />
-              <Cartwidget/>
-            </div>
+
+            <Link to="/cart"><Cartwidget/></Link>
+
+            {/* <div style={{ display: "flex" }}>
+                <Button style={{ marginRight: "10px" }} text="Login" />
+            </div> */}
           </nav>
         );
     }
     else{
     return (
         <nav className="footer">
-            <h1>GO GAUCHO</h1>
+            <h1>
+              <Link className="links" to="/">GO GAUCHO</Link> 
+            </h1>
             <ul>
-                <li>Instagram</li>
-                <li>Facebook</li>
+                <Link className="links" to="/">Instagram</Link>
+                <Link className="links" to="/">Facebook</Link>
             </ul>
         </nav>
     );

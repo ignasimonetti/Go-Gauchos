@@ -1,13 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500&display=swap');
+
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+} 
 
 /* HEADER */
 
 header{
+  font-family: 'Poppins', sans-serif;
   display: flex;
   align-items: center;  
 }
@@ -15,9 +23,16 @@ img{
   width: 200px;
 }
 
+/* NAVBAR */
+
 nav.navbar{
-  margin: 40px 0px 0px 100px;
+  background-color: white;
+  box-shadow: 0px 0px 3px 0.2px #cccccc91;
   display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+  /* margin: 40px 0px 0px 100px; */
 }
 
 nav.navbar ul{
@@ -27,24 +42,154 @@ nav.navbar ul{
 }
 
 li{
-margin: 0px 10px;
+  margin: 0px 10px;
 }
+
 nav.navbar button{
   margin-right: 10px;
 }
 
-/* MAIN */
-
-main {
-  min-width: 80vh;
-  background-color:rgba(183, 181, 181, 0.093);
-  margin: 20px;
+.links{
+  padding: 4px 6px;
+  text-decoration: none;
+  color: black;
+  margin: 0px 10px;
+}
+.active{
+  border: 1px solid black;
+  padding: 4px 6px;
+  border-radius: 4px;
 }
 
+/* MAIN */
+
+main{
+  font-family: 'Poppins', sans-serif;
+  min-width: 80vh;
+ /*  background-color:rgba(183, 181, 181, 0.093); */
+  margin: 20px;
+}
+.item-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.item{
+  position: relative;
+  margin: 40px 16px 16px 16px;
+  border-radius: 8px;
+  padding: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.info{
+  border-top: 4px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info h2{
+    font-size: 20px;
+}
+
+.info-price{
+  display: flex;
+  align-items: center;
+}
+
+.info-price h5{
+  font-size: 16px;
+  text-decoration: line-through;
+  margin-left: 10px;
+  background-color: rgb(93, 92, 92);
+  padding: 4px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 300;
+}
+
+.info-price h3{
+  font-size: 18px;
+}
+
+.item img{
+  border-radius: 8px;
+}
+
+.item:hover{
+  box-shadow: 0px 0px 12px 0.2px #ccc;
+}
+
+.descuento{
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #ccc;
+  display: inline-block;
+  padding: 4px 6px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.btn-detalle {
+  text-decoration: none;
+  padding: 4px 6px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  display: block;
+  color: black;
+  background-color: #ccc;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.detail-container{
+  background-color: #ccc;
+  margin: 10px;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.detail {
+  display: flex;
+}
+.detail-img {
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.detail-article{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contador{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  margin: 0 auto;
+  padding-left: 50px;
+  border-radius: 8px;
+  border: 2px solid black;
+  box-shadow: 0px 0px 3px 0.2px #cccccc91;
+}
+.add{
+  border-radius: 6px;
+  border: 2px solid black;
+  padding: 4px;
+}
 /* FOOTER */
 
 footer {
-  background-color: #181818;
+  font-family: 'Poppins', sans-serif;;
+  background-color: #b4b2b2;
   box-shadow: 0px 0px 3px 0.2px #cccccc91;
   display: flex;
   padding: 15px;
@@ -54,7 +199,7 @@ footer {
   bottom: 0;
   width: 100%;
   bottom: 0;
-  position: absolute;
+  /* position: absolute; */
 }
 
 nav.footer{

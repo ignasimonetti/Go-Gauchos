@@ -12,3 +12,17 @@ rafce --> Atajo para crear plantilla de componente
 
 
 
+
+Fonts -> Google Fonts
+
+Icons:  Google Icons
+        React-Icons (https://react-icons.github.io/react-icons/)
+
+
+
+Estados:
+HOOKS ---> useState () -> [1,2]
+La primera posicion es mi estado y la segunda la función seteadora
+const [state, Setstate] = useState(0) -> 0 es mi valor incial
+La única forma que tengo de modificar mi estado es através de la función seteadora
+setState (state + 1)
