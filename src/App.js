@@ -9,21 +9,22 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/main/ItemDetailContainer';
 import Cart from './components/cart/Cart';
 import Form from './components/form/Form';
+import CartProvider from './context/CartContext';
 
 
   const App = () => {
-    
-
-  return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Main greeting={"Bienvenidos al portal de servicios digitales"} numero={1}/>}/>
-        <Route path="/detail/:idProd" element={<ItemDetailContainer />} />
-        <Route path="/cart" element={<Cart/>} />
-        <Route path="/checkout" element={<Form/>}/>
-      </Routes>
-      <Footer />
+    return (
+      <BrowserRouter>
+        <CartProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Main greeting={"Bienvenidos al portal de servicios digitales"} numero={1}/>}/>
+            <Route path="/detail/:idProd" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<Cart/>} />
+            <Route path="/checkout" element={<Form/>}/>
+          </Routes>
+        <Footer/>
+      </CartProvider>
     </BrowserRouter>
   );
   };

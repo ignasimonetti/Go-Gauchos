@@ -1,6 +1,5 @@
 
 import Cartwidget from "./Cartwidget";
-/* import Button from "../Button"; */
 import { Link , NavLink} from "react-router-dom";
 
 
@@ -17,10 +16,6 @@ const Navbar = ({isInHeader}) => {
             </ul>
 
             <Link to="/cart"><Cartwidget/></Link>
-
-            {/* <div style={{ display: "flex" }}>
-                <Button style={{ marginRight: "10px" }} text="Login" />
-            </div> */}
           </nav>
         );
     }

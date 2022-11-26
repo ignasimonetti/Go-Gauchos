@@ -27,3 +27,24 @@ export const products = [
     img: "https://res.cloudinary.com/db9rq00mf/image/upload/v1667169969/5-fatores-que-otimizam-seus-resultados-de-marketing-digital_xukvtv.jpg",
   },
 ];
+
+export const getProducts = (categoryName) => {
+  return new Promise((res, rej) => {
+    const prodFiltrados = products.filter(
+      (prod) => prod.category === categoryName
+    );
+    const ref = categoryName ? prodFiltrados : products;
+    setTimeout(() => {
+      res(ref);
+    }, 500);
+  });
+};
+
+export const getProduct = (idProd) => {
+  return new Promise((res, rej) => {
+    const product = products.find((prod) => prod.id === +idProd);
+    setTimeout(() => {
+      res(product);
+    }, 500);
+  });
+};
