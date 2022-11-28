@@ -9,7 +9,7 @@ Este proyecto fue para el curso de React de Coder House y trata de un e-commerce
 ![](./public/logo.png)
 
 Link para ver el proyecto deployado
-[mi-tienda](http://mi-tienda.netlify.com)
+[mi-tienda](http://mi-tienda.netlify.com) falta link
 
 ## Librerías utilizadas
 
