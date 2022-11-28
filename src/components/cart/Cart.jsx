@@ -15,26 +15,25 @@ const Cart = () => {
       </h1>
     );
 
-  return ( 
+  return (
     <div>
-      {cart.map((prod)=> (
+      {cart.map((prod) => (
         <div key={prod.id}>
-            <img src={prod.img} alt={prod.title} width="80px" />
-            <div>
-              <h3>{prod.title}</h3>
-              <h3>{prod.cantidad}</h3>
-              <button onClick={() => deleteOne (prod.id)}>
-                Eliminar
-              </button>
-            </div>
-
+          <img src={prod.img} alt={prod.title} width="80px" />
+          <div>
+            <h3>{prod.title}</h3>
+            <h3>{prod.cantidad}</h3>
+            <button onClick={() => deleteOne(prod.id)}>
+              Eliminar producto
+            </button>
+          </div>
         </div>
       ))}
-      <h2>Total: {totalPrecio()}$</h2>
+      <h2>Total: ${totalPrecio()}</h2>
       <button onClick={deleteAll}>Vaciar carrito</button>
-      <Link to="/checkout">Checkout</Link>
+      <Link to="/checkout" className="btn light lg btn-outline-secondary btn-lg  rounded-2 mb-4 mx-auto"> Checkout </Link>
     </div>
-  )
+  );
 };
 
 export default Cart;

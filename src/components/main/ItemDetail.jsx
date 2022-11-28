@@ -31,7 +31,7 @@ const ItemDetail = ({item}) => {
           {show ? (
           <ItemCount stock={item.stock} onAdd={onAdd} />
           ) : (
-            <Link to="/cart">Ir al carrito</Link>
+            <Link className='btn' to="/cart">Ir al carrito</Link>
           )}
         </article>
       </div>

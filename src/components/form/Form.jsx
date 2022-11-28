@@ -9,6 +9,10 @@ import { db } from '/Users/ignaciosimonetti/Desktop/go-gauchos/src/services/fire
 const Form = () => {
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [address, setAddress] = useState('');
+    const [mail, setMail] = useState('');
+    const [mailDos, setMailDos] = useState('');
     const [orderId, setOrderId] = useState('');
 
     const { cart, totalPrecio,deleteAll } = useContext(CartContext);
@@ -22,9 +26,10 @@ const Form = () => {
         comprador: {
             nombre: name,
             apellido: lastName,
-            telefono: 123456,
-            direccion: 'Calle false 123',
-            email: 'igna@coder.com',
+            telefono: phone,
+            direccion: address,
+            email: mail,
+            emailDos: mailDos
         },
         items: cart,
         total: totalCarrito,
@@ -48,13 +53,20 @@ const Form = () => {
 
     const handleLastName = (e) => setLastName(e.target.value);
 
+    const handlePhone = (e) => setPhone(e.target.value);
+
+    const handleAddress = (e) => setAddress(e.target.value);
+
+    const handleMail = (e) => setMail(e.target.value);
+
+    const handleMailDos = (e) => setMailDos(e.target.value);
+
     if (orderId) {
       return (
-        <h1>Gracias por tu compra tu número de seguimiento es {orderId}</h1>
+        <h1>Gracias por tu compra tu número de seguimiento es: {orderId}</h1>
       );
     }
  
-
   return (
     <div
       style={{
@@ -62,39 +74,102 @@ const Form = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        flexWrap: "wrap",
+        flexDirection: "column",
+        marginTop: "30px",
       }}
     >
-      <form action="" onSubmit={enviarDatos}>
+      <form action="" name="" onSubmit={enviarDatos}>
+        <label style={{ display: "block" }} id="lbl1" name="lbl1" for="txt1">
+          Nombre:
+        </label>
         <input
           type="text"
-          placeholder="Nombre"
           name="nombre"
+          required
           onChange={handleName}
           value={name}
         />
+        <label
+          style={{ display: "block", marginTop: "20px" }}
+          id="lbl1"
+          name="lbl1"
+          for="txt1"
+        >
+          Apellido
+        </label>
         <input
           type="text"
-          placeholder="Apellido"
           name="apellido"
+          required
           onChange={handleLastName}
           value={lastName}
         />
-       {/*  <input
-          type="number"
-          placeholder="Telefono"
+        <label
+          style={{ display: "block", marginTop: "20px" }}
+          id="lbl1"
+          name="lbl1"
+          for="txt1"
+        >
+          Teléfono
+        </label>
+        <input
+          type="number" 
           name="telefono"
           onChange={handlePhone}
           value={phone}
+          required
         />
+        <label
+          style={{ display: "block", marginTop: "20px" }}
+          id="lbl1"
+          name="lbl1"
+          for="txt1"
+        >
+          Dirección
+        </label>
+        <input
+          type="text"
+          name="direccion"
+          required
+          onChange={handleAddress}
+          value={address}
+        />
+        <label
+          style={{ display: "block", marginTop: "20px" }}
+          id="lbl1"
+          name="lbl1"
+          for="txt1"
+        >
+          E-mail
+        </label>
         <input
           type="email"
-          placeholder="Email"
-          name="email"
-          onChange={handleEmail}
-          value={email}
-        /> */}
-        <button>Enviar</button>
+          name="mail"
+          required
+          onChange={handleMail}
+          value={mail}
+        />
+        <br></br>
+        <label
+          style={{ display: "block", marginTop: "20px" }}
+          id="lbl1"
+          name="lbl1"
+          for="txt1"
+        >
+          Repetir E-mail
+        </label>
+        <input
+          type="email"
+          name="mailDos"
+          required
+          onChange={handleMailDos}
+          value={mailDos}
+        />
+        <br></br>
+        <button disabled={mail !== mailDos}>Enviar</button>
       </form>
+      
     </div>
   );
 }
